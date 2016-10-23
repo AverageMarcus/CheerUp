@@ -26,12 +26,10 @@ setInterval(function() {
       if(face) {
         delete face.scores.neutral; // Don't care about this
         const topEmotion = Object.keys(face.scores).reduce((a, b) => face.scores[a] > face.scores[b] ? a : b);
-
-        console.log(topEmotion)
         if(topEmotion === 'sadness' || topEmotion === 'anger') {
           open('https://www.reddit.com/r/aww/random');
         }
       }
     });
   });
-}, 1000 * 10 );
+}, 1000 * 60 *5);
